@@ -1,0 +1,10 @@
+<div id="canvas" width="578" height="200">
+</div>
+		
+<div class="control">
+<input type="text" placeholder="Sisesta oma kaal"><input type="submit" value="Arvuta">
+</div>
+<div class="social">
+<div>Facebook</div>
+<div>E-mail</div>
+</div>

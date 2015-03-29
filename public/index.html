@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- link rel="apple-touch-icon-precomposed" href="icon.png">
+	<link rel="apple-touch-startup-image" href="Default.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0;"-->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">  
+	<meta charset=utf-8>
+
+  <meta http-equiv="X-UA-Compatible" content="chrome=IE8">
+  <title>Kehamassi kalkulaator</title>
+  <link rel="stylesheet" href="application.css" type="text/css" charset="utf-8">
+  <link rel="stylesheet" href="fancybox/jquery.fancybox-1.3.4.css" type="text/css" charset="utf-8">
+  <script src="data.js" type="text/javascript" charset="utf-8"></script>
+  <script src="application.js" type="text/javascript" charset="utf-8"></script>
+  <script>
+  	window.requestAnimFrame = (function(callback){
+		return window.requestAnimationFrame ||
+		window.webkitRequestAnimationFrame ||
+		window.mozRequestAnimationFrame ||
+		window.oRequestAnimationFrame ||
+		window.msRequestAnimationFrame ||
+		function(callback){
+			window.setTimeout(callback, 1000 / 60);
+		};
+	})();
+  </script>
+  <script type="text/javascript" charset="utf-8">
+    var jQuery  = require("jqueryify");
+		
+    var exports = this;
+    jQuery(function($){
+      var App = require("index");
+      exports.app = new App({el: $("body"), data: app_data});      
+	  
+	   //window.fbAsyncInit = function () { App.initFB(); };
+	  // Load the SDK Asynchronously
+	  (function(d){
+		 var js, id = 'fancybox'; if (d.getElementById(id)) {return;}
+		 js = d.createElement('script'); js.id = id; js.async = true;
+		 js.src = "fancybox/jquery.fancybox-1.3.4.js";
+		 d.getElementsByTagName('head')[0].appendChild(js);
+
+	   }(document));	
+	   
+    });
+		
+  </script>
+  
+</head>
+<body>
+  <!--[if IE lt 9]>
+    <script type="text/javascript" 
+     src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+
+    <style>
+     .chromeFrameInstallDefaultStyle {
+      /* width: 80%;*/ /* default is 800px */
+       border: 5px solid blue;
+     }
+    </style>
+
+    <div id="prompt">
+
+    </div>
+ 
+    <script>
+     // The conditional ensures that this code will only execute in IE,
+     // Therefore we can use the IE-specific attachEvent without worry
+     window.attachEvent("onload", function() {
+       CFInstall.check({
+         mode: "inline", // the default
+         node: "prompt"
+       });
+     });
+    </script>
+  <![else]>
+  <![endif]-->
+	<div id="main">
+		<div id="canvas">
+		</div>
+		<!--
+		<div class="social">
+			<div>Facebook</div>
+			<div>E-mail</div>
+		</div>
+		-->
+	</div>
+	<!-- div id="footer">
+		<a href="http://muuseum.mnt.ee/" target="_blank"><img src="images/mm_logo.png"></a>
+	</div -->
+<div id="galleries" style="display:none">
+	<a rel="taksikoer" href="resources/5/544/1.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="taksikoer" href="resources/5/544/2.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="taksikoer" href="resources/5/544/3.jpg"><img src="images/cars/image_missing.png"></a>
+	
+	<a rel="ET-600" href="resources/5/543/1.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="ET-600" href="resources/5/543/2.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="ET-600" href="resources/5/543/3.jpg"><img src="images/cars/image_missing.png"></a>
+	
+	<a rel="M-401" href="resources/5/547/1.jpg"><img src="images/cars/image_missing.png"></a>
+	
+	<a rel="D-455" href="resources/5/524/1.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="D-455" href="resources/5/524/2.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="D-455" href="resources/5/524/3.jpg"><img src="images/cars/image_missing.png"></a>
+	
+	<a rel="GAZ-24" href="resources/5/545/1.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="GAZ-24" href="resources/5/545/2.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="GAZ-24" href="resources/5/545/3.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="GAZ-24" href="resources/5/545/4.jpg"><img src="images/cars/image_missing.png"></a>
+	
+	<a rel="GAZ-MM" href="resources/5/535/1.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="GAZ-MM" href="resources/5/535/2.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="GAZ-MM" href="resources/5/535/3.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="GAZ-MM" href="resources/5/535/4.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="GAZ-MM" href="resources/5/535/5.jpg"><img src="images/cars/image_missing.png"></a>
+	
+	<a rel="GAZ-51A" href="resources/5/536/1.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="GAZ-51A" href="resources/5/536/2.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="GAZ-51A" href="resources/5/536/3.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="GAZ-51A" href="resources/5/536/4.jpg"><img src="images/cars/image_missing.png"></a>
+	
+	<a rel="Caterpillar" href="resources/5/524/1.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="Caterpillar" href="resources/5/524/2.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="Caterpillar" href="resources/5/524/3.jpg"><img src="images/cars/image_missing.png"></a>
+	
+	<a rel="D-241" href="resources/5/523/1.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="D-241" href="resources/5/523/2.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="D-241" href="resources/5/523/3.jpg"><img src="images/cars/image_missing.png"></a>
+	
+	<a rel="SD-105A" href="resources/2/22/1.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="SD-105A" href="resources/2/22/2.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="SD-105A" href="resources/2/22/3.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="SD-105A" href="resources/2/22/4.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="SD-105A" href="resources/2/22/5.jpg"><img src="images/cars/image_missing.png"></a>
+	
+	<a rel="DU-50" href="resources/4/413/1.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="DU-50" href="resources/4/413/2.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="DU-50" href="resources/4/413/3.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="DU-50" href="resources/4/413/4.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="DU-50" href="resources/4/413/5.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="DU-50" href="resources/4/413/6.jpg"><img src="images/cars/image_missing.png"></a>
+	
+	<a rel="MAZ-200" href="resources/5/538/1.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="MAZ-200" href="resources/5/538/2.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="MAZ-200" href="resources/5/538/3.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="MAZ-200" href="resources/5/538/4.jpg"><img src="images/cars/image_missing.png"></a>
+	
+	<a rel="DE-5" href="resources/5/541/1.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="DE-5" href="resources/5/541/2.jpg"><img src="images/cars/image_missing.png"></a>
+	
+	<a rel="D-598A" href="resources/5/529/1.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="D-598A" href="resources/5/529/2.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="D-598A" href="resources/5/529/3.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="D-598A" href="resources/5/529/4.jpg"><img src="images/cars/image_missing.png"></a>
+	
+	<a rel="D-512" href="resources/5/528/1.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="D-512" href="resources/5/528/2.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="D-512" href="resources/5/528/3.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="D-512" href="resources/5/528/4.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="D-512" href="resources/5/528/5.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="D-512" href="resources/5/528/6.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="D-512" href="resources/5/528/7.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="D-512" href="resources/5/528/8.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="D-512" href="resources/5/528/9.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="D-512" href="resources/5/528/10.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="D-512" href="resources/5/528/11.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="D-512" href="resources/5/528/12.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="D-512" href="resources/5/528/13.jpg"><img src="images/cars/image_missing.png"></a>
+	
+	<a rel="V-10" href="resources/5/527/1.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="V-10" href="resources/5/527/2.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="V-10" href="resources/5/527/3.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="V-10" href="resources/5/527/4.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="V-10" href="resources/5/527/5.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="V-10" href="resources/5/527/6.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="V-10" href="resources/5/527/7.jpg"><img src="images/cars/image_missing.png"></a>
+	
+	<a rel="Saurer" href="resources/3/35/1.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="Saurer" href="resources/3/35/2.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="Saurer" href="resources/3/35/3.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="Saurer" href="resources/3/35/4.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="Saurer" href="resources/3/35/5.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="Saurer" href="resources/3/35/6.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="Saurer" href="resources/3/35/7.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="Saurer" href="resources/3/35/8.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="Saurer" href="resources/3/35/9.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="Saurer" href="resources/3/35/10.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="Saurer" href="resources/3/35/11.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="Saurer" href="resources/3/35/12.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="Saurer" href="resources/3/35/13.jpg"><img src="images/cars/image_missing.png"></a>
+	
+	<a rel="KDM-130A" href="resources/5/542/1.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="KDM-130A" href="resources/5/542/2.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="KDM-130A" href="resources/5/542/3.jpg"><img src="images/cars/image_missing.png"></a>
+	
+	<a rel="D-144" href="resources/5/526/1.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="D-144" href="resources/5/526/2.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="D-144" href="resources/5/526/3.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="D-144" href="resources/5/526/4.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="D-144" href="resources/5/526/5.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="D-144" href="resources/5/526/6.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="D-144" href="resources/5/526/7.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="D-144" href="resources/5/526/8.jpg"><img src="images/cars/image_missing.png"></a>
+	<a rel="D-144" href="resources/5/526/9.jpg"><img src="images/cars/image_missing.png"></a>
+
+	<a rel="DZ-98" href="resources/5/530/1.jpg"><img src="images/cars/image_missing.png"></a>
+	
+</div>
+<a href="http://muuseum.mnt.ee/" id="logo"></a>
+</body>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33776312-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</html>

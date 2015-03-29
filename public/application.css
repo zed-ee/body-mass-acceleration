@@ -1,0 +1,33 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: url("images/ambient_bg.jpg") repeat scroll center top transparent;
+}
+#main {
+  position: absolute;
+}
+.control,
+.social {
+  position: absolute;
+  bottom: 0;
+  border: 1px solid #008000;
+}
+.control {
+  left: 300px;
+}
+.social {
+  right: 0;
+}
+#weight_display {
+  positon: relative;
+  left: 0;
+}
+#footer {
+  position: absolute;
+  top: 12px;
+  text-align: center;
+  width: 100%;
+}
